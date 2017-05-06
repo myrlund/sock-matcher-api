@@ -6,10 +6,10 @@ from .base import *
 DEBUG = False
 
 # Prepend prod apps
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'collectfast',
     's3_folder_storage',
-) + INSTALLED_APPS
+] + INSTALLED_APPS
 
 ALLOWED_HOSTS = [
     'sock-matcher.herokuapp.com',
