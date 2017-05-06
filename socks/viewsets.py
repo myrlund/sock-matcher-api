@@ -37,7 +37,8 @@ class SockViewSet(viewsets.ModelViewSet):
     @detail_route(methods=['post'])
     def preferences(self, request, pk=None):
 
-        data = request.data
+        data = request.data.copy()
+
         data['source_sock'] = self.get_object().pk
 
         serializer = SockPreferenceSerializer(data=data)
