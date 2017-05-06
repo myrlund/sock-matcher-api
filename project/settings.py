@@ -34,7 +34,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 AUTH_USER_MODEL = 'users.User'
-AUTHENTICATION_BACKENDS = ['users.backends.OpenBackend', ]
+# AUTHENTICATION_BACKENDS = ['users.backends.OpenBackend', ]
 
 PROJECT_APPS = [
     'socks',
