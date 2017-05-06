@@ -1,5 +1,5 @@
 from rest_framework import status, viewsets
-from rest_framework.decorators import detail_route
+from rest_framework.decorators import detail_route, list_route
 from rest_framework.response import Response
 
 from .models import Sock, SockPreference
@@ -20,6 +20,12 @@ class SockViewSet(viewsets.ModelViewSet):
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
+    @list_route(methods=['get'])
+    def mine(self, request, *args, **kwargs):
+        my_socks = self.get_queryset().owned_by_user(request.user)
+        serializer = self.get_serializer(my_socks, many=True)
         return Response(serializer.data)
 
     @detail_route(methods=['get'])
