@@ -26,6 +26,7 @@ SECRET_KEY = '#tpspc-=87)3+*$rcxt9-_#_zfi#_%(0a=!nkp43_o#w-(83$t'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'sock-matcher.herokuapp.com',
     'localhost',
     'myrlund.local',
 ]
